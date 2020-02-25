@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+data = np.random.randint(20, size=15)
+
+figure = plt.figure()
+
+my_plot = figure.add_subplot(1,1,1)
+
+# get an index for the data
+index = [i for i in range(len(data))]
+
+my_plot.bar(index, data)
+
+plt.show()
