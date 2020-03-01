@@ -6,7 +6,7 @@ my_paragraph = "This eBook is fiiiiiiiiiiiiiiiiiiiiiiiiiiior the use of anyone a
 
 my_word_list = my_paragraph.split(" ")
 
-unique_chars = set(my_word_list)
+unique_words = set(my_word_list)
 
 # create a variable to the most common character
 most_common = []
@@ -16,15 +16,15 @@ most_common_freq = 0
 
 frequencies = {}
 
-for char in unique_chars:
-    if char.isalnum():
-        freq = my_paragraph.count(char)
+for word in unique_words:
+    if word.isalnum():
+        freq = my_word_list.count(word)
 
         if freq > most_common_freq:
-            most_common = [char]
+            most_common = [word]
             most_common_freq = freq
         elif freq == most_common_freq:
-            most_common.append(char)
+            most_common.append(word)
 
 print(f"The most common character is {most_common}, which occurs {most_common_freq} times.")
 
