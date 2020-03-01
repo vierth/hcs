@@ -14,6 +14,6 @@ my_plot = figure.add_subplot(1,1,1)
 # get an index for the data
 index = [i for i in range(len(data))]
 
-sns.barplot(index, data)
+my_plot.bar(index, data)
 
 plt.show()
