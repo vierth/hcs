@@ -10,7 +10,7 @@ action = 'query'
 connector = '&'
 
 # you can also set properties for your query
-prop = 'linkshere'
+prop = 'categories'
 
 # set the search method
 search_method = 'titles'
@@ -35,4 +35,5 @@ with urllib.request.urlopen(wiki_request) as request:
     response_data = request.read().decode()
 
 wiki_results = json.loads(response_data)
-print(wiki_results)
+pretty_data = json.dumps(wiki_results, indent=4, ensure_ascii=False)
+print(pretty_data)
