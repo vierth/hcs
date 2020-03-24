@@ -75,7 +75,19 @@ for color, class_number, value in zip(colors, number_for_vals, unique_vals):
     plt.scatter(my_pca[text_class==class_number, 0],
                 my_pca[text_class==class_number, 1],
                 label=value,
-                c=color)
+                c=color,
+                s=2,
+                alpha=.5)
+
+# get the component loadings:
+loadings = pca.components_
+
+# get the vocabulary from the vectorizer
+vocab = count_vectorizer.get_feature_names()
+
+# add them to the plot
+for i, word in enumerate(vocab):
+    plt.annotate(word, xy=(loadings[0,i], loadings[1,i]))
 
 # add a legend
 plt.legend()
